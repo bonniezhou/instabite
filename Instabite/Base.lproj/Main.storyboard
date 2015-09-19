@@ -1,50 +1,98 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6751" systemVersion="13F1077" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="Y1A-S9-wFR">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6751" systemVersion="13F1077" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="ILE-ge-xpd">
     <dependencies>
+        <deployment version="1792" identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6736"/>
     </dependencies>
     <scenes>
+        <!--Navigation Controller-->
+        <scene sceneID="Eek-U3-UV0">
+            <objects>
+                <navigationController id="ILE-ge-xpd" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Pdd-UU-Xz1">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="Y1A-S9-wFR" kind="relationship" relationship="rootViewController" id="mfS-Y9-f0T"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="p2v-Jb-wXg" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="170" y="-440"/>
+        </scene>
         <!--View Controller-->
         <scene sceneID="Fih-We-ALb">
             <objects>
                 <viewController id="Y1A-S9-wFR" sceneMemberID="viewController">
                     <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="MY4-Yg-RLQ"/>
-                        <viewControllerLayoutGuide type="bottom" id="6vy-sS-Sz0"/>
+                        <viewControllerLayoutGuide type="top" id="evZ-te-wMQ"/>
+                        <viewControllerLayoutGuide type="bottom" id="8uq-EJ-qXk"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="9Vz-hu-MRr">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="background" translatesAutoresizingMaskIntoConstraints="NO" id="69A-mL-Bo3">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="background" translatesAutoresizingMaskIntoConstraints="NO" id="GvT-88-Qou">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                             </imageView>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Food Category" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="u2a-po-jFx">
-                                <rect key="frame" x="44" y="269" width="118" height="30"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Location" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="7a5-5T-3pj">
-                                <rect key="frame" x="191" y="269" width="97" height="30"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="a2j-F4-bPX">
-                                <rect key="frame" x="44" y="307" width="244" height="31"/>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="a2j-F4-bPX">
+                                <rect key="frame" x="44" y="304" width="244" height="48"/>
+                                <color key="backgroundColor" red="0.086274512110000007" green="0.49411767719999999" blue="0.73725491759999995" alpha="1" colorSpace="deviceRGB"/>
+                                <fontDescription key="fontDescription" type="system" weight="black" pointSize="20"/>
                                 <state key="normal" title="Search">
+                                    <color key="titleColor" red="0.9490196704864502" green="0.95686280727386475" blue="0.94509810209274292" alpha="1" colorSpace="deviceRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <segue destination="vXZ-lx-hvc" kind="push" id="b6E-F7-mwa"/>
+                                </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="INSTABITE" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6xd-gD-IIi">
+                                <rect key="frame" x="38" y="38" width="244" height="87"/>
+                                <fontDescription key="fontDescription" type="system" weight="black" pointSize="45"/>
+                                <color key="textColor" red="0.086274512112140656" green="0.49411767721176147" blue="0.73725491762161255" alpha="1" colorSpace="deviceRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text=" Type of food" clearsOnBeginEditing="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="lTK-w6-HuE">
+                                <rect key="frame" x="44" y="164" width="244" height="52"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="textColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text=" Location" clearsOnBeginEditing="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="UYh-ac-csR">
+                                <rect key="frame" x="44" y="224" width="244" height="52"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="textColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Find a meal that looks like heaven." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GH7-QX-hvC">
+                                <rect key="frame" x="28" y="117" width="265" height="27"/>
+                                <fontDescription key="fontDescription" type="system" weight="ultraLight" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="centerX" secondItem="lTK-w6-HuE" secondAttribute="centerX" id="7y3-IU-ocr"/>
+                            <constraint firstAttribute="trailing" secondItem="GvT-88-Qou" secondAttribute="trailing" id="80T-gb-UpK"/>
+                            <constraint firstAttribute="centerX" secondItem="6xd-gD-IIi" secondAttribute="centerX" constant="1" id="FXn-2r-CWa"/>
+                            <constraint firstItem="GvT-88-Qou" firstAttribute="top" secondItem="9Vz-hu-MRr" secondAttribute="top" id="KAO-Wb-7Py"/>
+                            <constraint firstAttribute="centerX" secondItem="a2j-F4-bPX" secondAttribute="centerX" id="URI-KM-C4I"/>
+                            <constraint firstAttribute="centerX" secondItem="GH7-QX-hvC" secondAttribute="centerX" id="b3X-Ta-ftT"/>
+                            <constraint firstItem="GvT-88-Qou" firstAttribute="leading" secondItem="9Vz-hu-MRr" secondAttribute="leading" id="nme-EW-bKM"/>
+                            <constraint firstAttribute="centerX" secondItem="UYh-ac-csR" secondAttribute="centerX" id="saJ-5i-N3j"/>
+                            <constraint firstItem="8uq-EJ-qXk" firstAttribute="top" secondItem="GvT-88-Qou" secondAttribute="bottom" id="tQR-Ct-E70"/>
+                        </constraints>
                     </view>
-                    <connections>
-                        <outlet property="view" destination="69A-mL-Bo3" id="ZVF-KA-7nK"/>
-                    </connections>
+                    <navigationItem key="navigationItem" id="hzo-Yz-Knm"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lys-aD-g00" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-40" y="292"/>
+            <point key="canvasLocation" x="-44" y="267"/>
         </scene>
         <!--View Controller-->
         <!--Results View Controller-->
@@ -52,8 +100,8 @@
             <objects>
                 <viewController id="vXZ-lx-hvc" customClass="ResultsViewController" customModule="Instabite" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="jyV-Pf-zRb"/>
-                        <viewControllerLayoutGuide type="bottom" id="2fi-mo-0CV"/>
+                        <viewControllerLayoutGuide type="top" id="aCH-Tz-6Tv"/>
+                        <viewControllerLayoutGuide type="bottom" id="TCr-d5-R5v"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="kh9-bI-dsS">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
@@ -70,13 +118,14 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
+                    <navigationItem key="navigationItem" id="TvV-3F-Qcd"/>
                     <connections>
                         <outlet property="appTableView" destination="hUY-5T-71r" id="A4v-fy-e4f"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="360" y="292"/>
+            <point key="canvasLocation" x="360" y="291.99999999999989"/>
         </scene>
     </scenes>
     <resources>
