@@ -6,12 +6,8 @@
 //  Copyright (c) 2015 Bonnie Zhou. All rights reserved.
 //
 
-import Foundation
 import UIKit
 
-
 class SearchViewController: UIViewController {
-    
-    
-    
+
 }
