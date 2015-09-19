@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import Alamofire
 
 protocol YelpAPIControllerProtocol {
     func didReceiveAPIResults(results: NSArray)
@@ -14,8 +15,16 @@ protocol YelpAPIControllerProtocol {
 
 class YelpAPIController {
     var delegate: YelpAPIControllerProtocol?
-    
+    let baseUrl = "http://api.yelp.com/v2/search"
+    let consumerKey = "vxQLi0q-qk-KbJlmR3wyjw"
     func searchYelpFor(searchTerm: String) {
-        //api magic
+        let parameters = [
+            "term": searchTerm,
+            "oauth_consumer_key": consumerKey
+        ]
+        Alamofire.request(.GET, baseUrl, parameters: parameters)
+            .responseJSON { request, response, JSON, error in
+                println(JSON)
+        }
     }
 }
