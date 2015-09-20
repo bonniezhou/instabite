@@ -20,7 +20,7 @@ class YelpAPIController:NSObject {
         accessTokenSecret: config["private"]!["yelp"]!["token"]!
     )
     
-    func searchYelpFor(searchTerm: String, location: String, callback: (NSDictionary) -> Void) {
+    func searchYelpFor(searchTerm: String, location: String, callback: (NSArray) -> Void) {
         let parameters = [
             "term": searchTerm,
             "location": location
@@ -35,9 +35,7 @@ class YelpAPIController:NSObject {
                 catch {
                     print("fuck")
                 }
-                for business in NSArray(array: restaurants["businesses"]! as! Array)   {
-                    callback(business as! NSDictionary)
-                }
+                callback(restaurants["businesses"]! as! NSArray)
 
             }, failure: {
                 data in

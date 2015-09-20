@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2A19A42D1BAEAD06003D762F /* ResultCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A19A42C1BAEAD06003D762F /* ResultCell.swift */; settings = {ASSET_TAGS = (); }; };
 		2A56CA8F1BAE720300E1218E /* YelpAPIController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A56CA8E1BAE720300E1218E /* YelpAPIController.swift */; settings = {ASSET_TAGS = (); }; };
 		2A56CA911BAE720800E1218E /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A56CA901BAE720800E1218E /* SearchViewController.swift */; settings = {ASSET_TAGS = (); }; };
 		2A56CA941BAE720F00E1218E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2A56CA921BAE720F00E1218E /* Main.storyboard */; settings = {ASSET_TAGS = (); }; };
@@ -33,6 +34,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2A19A42C1BAEAD06003D762F /* ResultCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResultCell.swift; sourceTree = "<group>"; };
 		2A56CA8E1BAE720300E1218E /* YelpAPIController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YelpAPIController.swift; sourceTree = "<group>"; };
 		2A56CA901BAE720800E1218E /* SearchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		2A56CA931BAE720F00E1218E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -119,6 +121,7 @@
 				2A56CA951BAE724000E1218E /* InstagramAPIController.swift */,
 				2A56CA901BAE720800E1218E /* SearchViewController.swift */,
 				2A56CA8E1BAE720300E1218E /* YelpAPIController.swift */,
+				2A19A42C1BAEAD06003D762F /* ResultCell.swift */,
 				2A56CA921BAE720F00E1218E /* Main.storyboard */,
 				FA7278C81BADB5EA00C98F50 /* Images.xcassets */,
 				2A56CA971BAE792A00E1218E /* Info.plist */,
@@ -304,6 +307,7 @@
 				FA7278C21BADB5EA00C98F50 /* AppDelegate.swift in Sources */,
 				2A56CA8F1BAE720300E1218E /* YelpAPIController.swift in Sources */,
 				2AA929611BAE60A7005A3768 /* config.swift in Sources */,
+				2A19A42D1BAEAD06003D762F /* ResultCell.swift in Sources */,
 				2A56CA961BAE724000E1218E /* InstagramAPIController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

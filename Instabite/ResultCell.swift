@@ -16,7 +16,7 @@ class ResultCell: UITableViewCell {
     @IBOutlet weak var bottomRight: UIImageView!
     @IBOutlet weak var directionsButton: UIButton!
     
-    func configure(#text: String?) {
+    func configure(text text: String?) {
         title?.text = text
     }
 }

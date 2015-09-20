@@ -8,15 +8,6 @@
 
 import UIKit
 
-class PhotosLoader: InstagramDelegate   {
-    var photos: NSMutableArray = []
-    func instagramPhotoFound(photo: NSDictionary) {
-        photos.addObject([photo] as NSArray)
-    }
-    func instagramIsDone() {
-        print("done")
-    }
-}
 
 class SearchViewController: UIViewController {
     
@@ -27,16 +18,13 @@ class SearchViewController: UIViewController {
     @IBAction func getSearchResults(sender: UIButton){
         let Yelp: YelpAPIController = YelpAPIController()
         let Instagram = InstagramAPIController()
-        Yelp.searchYelpFor(foodTypeInput.text!, location: "Waterloo", callback:
+        Yelp.searchYelpFor(foodTypeInput.text!, location: location.text!, callback:
             Instagram.searchRestaurantPhotos
         )
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        var yelp = YelpAPIController()
-        var instagram = InstagramAPIController()
-        instagram.searchRestaurantPhotos("37.786138600000001", longitude: "-122.40262130000001")
     }
 
     override func didReceiveMemoryWarning() {

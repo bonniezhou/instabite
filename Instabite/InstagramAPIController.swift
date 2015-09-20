@@ -10,8 +10,8 @@ import Foundation
 import OAuthSwift
 
 protocol InstagramDelegate {
-    func instagramPhotoFound(photo: NSDictionary)
-    func instagramIsDone()
+    func instagramPhotoFound(results: ResultsViewController, photo: NSDictionary)
+    func instagramIsDone(results: ResultsViewController)
 }
 
 class InstagramAPIController {
@@ -24,37 +24,41 @@ class InstagramAPIController {
     )
     var delegate: InstagramDelegate?
     
-    func searchRestaurantPhotos(restaurant: NSDictionary) {
-        print(restaurant)
-        let latitude: Float = restaurant["location"]!["coordinate"]!!["latitude"]! as! Float
-        let longitude: Float = restaurant["location"]!["coordinate"]!!["longitude"]! as! Float
-        let locationSearchPath = "/search"
-        let locationSearchParameters = [
-            "client_id": config["public"]!["instagram"]!["clientId"]!,
-            "lat": latitude,
-            "lng": longitude,
-            "access_token": config["private"]!["instagram"]!["token"]!,
-        ]
-        instagramOAuth.get(baseUrl + locationSearchPath, parameters: locationSearchParameters as! Dictionary,
-            success: {
-                response, headers in
-                do  {
-                    let results: NSDictionary = try NSJSONSerialization.JSONObjectWithData(response, options: []) as! NSDictionary
-                    print(results["data"]!)
-                    let matchingIndex = self.searchByName(restaurant, insta: results["data"]! as! Array<NSDictionary>)
-                    print(matchingIndex)
-                    if(matchingIndex != -1){
-                        let id = (results["data"]![matchingIndex]["id"]! as! NSString).floatValue
-                        self.getRestaurantPhotos(Int(id), name: results["data"]![matchingIndex]["name"]! as! String)
+    func searchRestaurantPhotos(restaurants: NSArray) {
+        for r in restaurants   {
+            let restaurant = r as! NSDictionary
+            print(restaurant)
+            let latitude: Float = restaurant["location"]!["coordinate"]!!["latitude"]! as! Float
+            let longitude: Float = restaurant["location"]!["coordinate"]!!["longitude"]! as! Float
+            let locationSearchPath = "/search"
+            let locationSearchParameters = [
+                "client_id": config["public"]!["instagram"]!["clientId"]!,
+                "lat": latitude,
+                "lng": longitude,
+                "access_token": config["private"]!["instagram"]!["token"]!,
+            ]
+            instagramOAuth.get(baseUrl + locationSearchPath, parameters: locationSearchParameters as! Dictionary,
+                success: {
+                    response, headers in
+                    do  {
+                        let results: NSDictionary = try NSJSONSerialization.JSONObjectWithData(response, options: []) as! NSDictionary
+                        print(results["data"]!)
+                        let matchingIndex = self.searchByName(restaurant, insta: results["data"]! as! Array<NSDictionary>)
+                        print(matchingIndex)
+                        if(matchingIndex != -1){
+                            let id = (results["data"]![matchingIndex]["id"]! as! NSString).floatValue
+                            self.getRestaurantPhotos(Int(id), name: results["data"]![matchingIndex]["name"]! as! String)
+                        }
                     }
-                }
-                catch {
-                    print("fuck")
-                }
-            }, failure: {
-                data in
-                print(data)
-        })
+                    catch {
+                        print("fuck")
+                    }
+                }, failure: {
+                    data in
+                    print(data)
+            })
+        }
+        self.delegate?.instagramIsDone(ResultsViewController())
     }
     
     func searchByName(yelp: NSDictionary, insta: Array<NSDictionary>) -> Int  {
@@ -77,13 +81,13 @@ class InstagramAPIController {
                 response, headers in
                 do  {
                     let results: NSDictionary = try NSJSONSerialization.JSONObjectWithData(response, options: []) as! NSDictionary
-                    print("fuck")
+                    print(results)
                     if(results["data"]!.count > 0){
                         let photos = [
                             "name": name,
                             "photos": results["data"]!
                         ] as NSDictionary
-                        self.delegate?.instagramPhotoFound(photos)
+                        self.delegate?.instagramPhotoFound(ResultsViewController(), photo: photos)
                     }
                 }
                 catch {
