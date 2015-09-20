@@ -30,8 +30,11 @@ class ResultsViewController: UIViewController, UITableViewDataSource, UITableVie
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell: ResultCell = ResultCell(style: UITableViewCellStyle.Subtitle, reuseIdentifier: "ResultCell")
-        cell.configure(text: tableData[indexPath.row])
+//        let cell: ResultCell = ResultCell(style: UITableViewCellStyle.Subtitle, reuseIdentifier: "ResultCell")
+//        cell.configure(text: tableData[indexPath.row])
+        
+        let cell = self.appTableView.dequeueReusableCellWithIdentifier("ResultCell") as ResultCell
+        cell.title!.text = tableData[indexPath.row]
         return cell
     }
     
