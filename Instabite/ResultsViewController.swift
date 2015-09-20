@@ -9,11 +9,15 @@
 import UIKit
 
 class ResultsViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
-    var tableData = []
+    var tableData = ["foo", "bar", "baz"]
     @IBOutlet weak var appTableView: UITableView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        navigationItem.title = "RESULTS"
+        
+        appTableView.dataSource = self
+        appTableView.delegate = self
     }
     
     override func didReceiveMemoryWarning() {
@@ -22,16 +26,16 @@ class ResultsViewController: UIViewController, UITableViewDataSource, UITableVie
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 20
-        // return tableData.count
+        return tableData.count
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell: UITableViewCell = UITableViewCell(style: UITableViewCellStyle.Subtitle, reuseIdentifier: "MyTestCell")
-        
-        cell.textLabel?.text = "Row #\(indexPath.row)"
-        cell.detailTextLabel?.text = "Subtitle #\(indexPath.row)"
-        
+        let cell: ResultCell = ResultCell(style: UITableViewCellStyle.Subtitle, reuseIdentifier: "ResultCell")
+        cell.configure(text: tableData[indexPath.row])
         return cell
+    }
+    
+    func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+        return 500
     }
 }
