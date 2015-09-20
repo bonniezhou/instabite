@@ -10,7 +10,7 @@ import UIKit
 
 class ResultsViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     var tableData = []
-    @IBOutlet weak var appsTableView: UITableView!
+    @IBOutlet weak var appTableView: UITableView!
     
     override func viewDidLoad() {
         super.viewDidLoad()

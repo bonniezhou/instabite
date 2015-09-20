@@ -9,16 +9,16 @@
 import Foundation
 import OAuthSwift
 
-protocol YelpAPIControllerProtocol {
-    func didReceiveAPIResults(results: NSArray)
-}
-
 class YelpAPIController {
-    var delegate: YelpAPIControllerProtocol?
     let baseUrl = "http://api.yelp.com/v2/search"
     let consumerKey = "vxQLi0q-qk-KbJlmR3wyjw"
     
-    let yelpOAuth = OAuthSwiftClient(consumerKey: config["public"]!["yelp"]!["consumer"]!, consumerSecret: config["private"]!["yelp"]!["consumer"]!, accessToken: config["public"]!["yelp"]!["token"]!, accessTokenSecret: config["private"]!["yelp"]!["token"]!)
+    let yelpOAuth = OAuthSwiftClient(
+        consumerKey: config["public"]!["yelp"]!["consumer"]!,
+        consumerSecret: config["private"]!["yelp"]!["consumer"]!,
+        accessToken: config["public"]!["yelp"]!["token"]!,
+        accessTokenSecret: config["private"]!["yelp"]!["token"]!
+    )
     
     func searchYelpFor(searchTerm: String) {
         let parameters = [
