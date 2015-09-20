@@ -18,6 +18,7 @@ class SearchViewController: UIViewController {
     @IBAction func getSearchResults(sender: UIButton){
         let Yelp: YelpAPIController = YelpAPIController()
         let Instagram = InstagramAPIController()
+        Yelp.delegate = ResultsViewController()
         Yelp.searchYelpFor(foodTypeInput.text!, location: location.text!, callback:
             Instagram.searchRestaurantPhotos
         )

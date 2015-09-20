@@ -7,7 +7,13 @@
 //
 
 import Foundation
+import BrightFutures
 import OAuthSwift
+
+
+protocol YelpDelegate {
+    func done(photos: NSMutableArray)
+}
 
 class YelpAPIController:NSObject {
     let baseUrl = "https://api.yelp.com/v2/search"
@@ -19,8 +25,9 @@ class YelpAPIController:NSObject {
         accessToken: config["public"]!["yelp"]!["token"]!,
         accessTokenSecret: config["private"]!["yelp"]!["token"]!
     )
+    var delegate: YelpDelegate?
     
-    func searchYelpFor(searchTerm: String, location: String, callback: (NSArray) -> Void) {
+    func searchYelpFor(searchTerm: String, location: String, callback: (NSDictionary) -> NSDictionary) {
         let parameters = [
             "term": searchTerm,
             "location": location
@@ -30,16 +37,22 @@ class YelpAPIController:NSObject {
             success: {
                 data, headers in
                 do{
+                    var allPhotos: NSMutableArray = []
                     restaurants = try NSJSONSerialization.JSONObjectWithData(data, options: []) as! NSDictionary
+                    let businesses = restaurants["businesses"]! as! NSArray
+                    for r in businesses   {
+                        let restaurant = r as! NSDictionary
+                        let photos = callback(restaurant)
+                        allPhotos.addObject(photos)
+                    }
+                    self.delegate?.done(allPhotos)
                 }
                 catch {
                     print("fuck")
                 }
-                callback(restaurants["businesses"]! as! NSArray)
-
             }, failure: {
                 data in
-                print(data)
+                print("fuck")
             })
     }
 }

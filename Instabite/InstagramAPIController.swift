@@ -9,10 +9,9 @@
 import Foundation
 import OAuthSwift
 
-protocol InstagramDelegate {
-    func instagramPhotoFound(results: ResultsViewController, photo: NSDictionary)
-    func instagramIsDone(results: ResultsViewController)
-}
+//protocol InstagramDelegate {
+//    func instagramPhotoFound(photo: NSDictionary)
+//}
 
 class InstagramAPIController {
     let baseUrl = "https://api.instagram.com/v1/locations"
@@ -22,12 +21,9 @@ class InstagramAPIController {
         accessToken: config["private"]!["instagram"]!["token"]!,
         accessTokenSecret: config["private"]!["instagram"]!["token"]!
     )
-    var delegate: InstagramDelegate?
+//    var delegate: InstagramDelegate?
     
-    func searchRestaurantPhotos(restaurants: NSArray) {
-        for r in restaurants   {
-            let restaurant = r as! NSDictionary
-            print(restaurant)
+    func searchRestaurantPhotos(restaurant: NSDictionary) -> NSDictionary {
             let latitude: Float = restaurant["location"]!["coordinate"]!!["latitude"]! as! Float
             let longitude: Float = restaurant["location"]!["coordinate"]!!["longitude"]! as! Float
             let locationSearchPath = "/search"
@@ -42,12 +38,10 @@ class InstagramAPIController {
                     response, headers in
                     do  {
                         let results: NSDictionary = try NSJSONSerialization.JSONObjectWithData(response, options: []) as! NSDictionary
-                        print(results["data"]!)
                         let matchingIndex = self.searchByName(restaurant, insta: results["data"]! as! Array<NSDictionary>)
-                        print(matchingIndex)
                         if(matchingIndex != -1){
                             let id = (results["data"]![matchingIndex]["id"]! as! NSString).floatValue
-                            self.getRestaurantPhotos(Int(id), name: results["data"]![matchingIndex]["name"]! as! String)
+                            return self.getRestaurantPhotos(Int(id), name: results["data"]![matchingIndex]["name"]! as! String)
                         }
                     }
                     catch {
@@ -55,22 +49,20 @@ class InstagramAPIController {
                     }
                 }, failure: {
                     data in
-                    print(data)
-            })
-        }
-        self.delegate?.instagramIsDone(ResultsViewController())
+                    print("fuck")
+                })
     }
     
     func searchByName(yelp: NSDictionary, insta: Array<NSDictionary>) -> Int  {
         for i in 0...insta.count - 1  {
-            if (yelp["name"]! === insta[i]["name"]!)  {
+            if (yelp["name"]! as! String == insta[i]["name"]! as! String)  {
                 return i
             }
         }
         return -1
     }
     
-    func getRestaurantPhotos(id: Int, name: String) {
+    func getRestaurantPhotos(id: Int, name: String) -> NSDictionary {
         let mediaSearchPath = "/\(id)/media/recent"
         let mediaSearchParameters = [
             "client_id": config["public"]!["instagram"]!["clientId"]!,
@@ -81,13 +73,12 @@ class InstagramAPIController {
                 response, headers in
                 do  {
                     let results: NSDictionary = try NSJSONSerialization.JSONObjectWithData(response, options: []) as! NSDictionary
-                    print(results)
                     if(results["data"]!.count > 0){
                         let photos = [
                             "name": name,
                             "photos": results["data"]!
                         ] as NSDictionary
-                        self.delegate?.instagramPhotoFound(ResultsViewController(), photo: photos)
+                        return photos
                     }
                 }
                 catch {
@@ -96,6 +87,6 @@ class InstagramAPIController {
             }, failure: {
                 data in
                 print(data)
-        })
+            })
     }
 }
