@@ -45,11 +45,8 @@
 		32BF7AC0BDF4AA20F0E07985 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		5912CD788B2D82543236299B /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9B6887A25C2C390B9D398194 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
-<<<<<<< HEAD
 		B7DD31141BAE2D0B0000D95B /* SearchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		FA50B8AD1BAE5D1B00C2964B /* ResultCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResultCell.swift; sourceTree = "<group>"; };
-=======
->>>>>>> i dunno backend
 		FA7278BC1BADB5EA00C98F50 /* Instabite.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Instabite.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FA7278C11BADB5EA00C98F50 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FA7278C31BADB5EA00C98F50 /* ResultsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultsViewController.swift; sourceTree = "<group>"; };
@@ -123,18 +120,11 @@
 				2AA929601BAE60A7005A3768 /* config.swift */,
 				FA7278C11BADB5EA00C98F50 /* AppDelegate.swift */,
 				FA7278C31BADB5EA00C98F50 /* ResultsViewController.swift */,
-<<<<<<< HEAD
 				FA50B8AD1BAE5D1B00C2964B /* ResultCell.swift */,
 				B7DD31141BAE2D0B0000D95B /* SearchViewController.swift */,
 				FAFB3B8A1BADD5280030EE3B /* YelpAPIController.swift */,
 				FAFB3B8C1BADD5E40030EE3B /* InstagramAPIController.swift */,
 				FA7278C51BADB5EA00C98F50 /* Main.storyboard */,
-=======
-				2A56CA951BAE724000E1218E /* InstagramAPIController.swift */,
-				2A56CA901BAE720800E1218E /* SearchViewController.swift */,
-				2A56CA8E1BAE720300E1218E /* YelpAPIController.swift */,
-				2A56CA921BAE720F00E1218E /* Main.storyboard */,
->>>>>>> i dunno backend
 				FA7278C81BADB5EA00C98F50 /* Images.xcassets */,
 				2A56CA971BAE792A00E1218E /* Info.plist */,
 				FA7278CA1BADB5EA00C98F50 /* LaunchScreen.xib */,
@@ -319,14 +309,11 @@
 				FA7278C21BADB5EA00C98F50 /* AppDelegate.swift in Sources */,
 				2A56CA8F1BAE720300E1218E /* YelpAPIController.swift in Sources */,
 				2AA929611BAE60A7005A3768 /* config.swift in Sources */,
-<<<<<<< HEAD
 				FAFB3B8B1BADD5280030EE3B /* YelpAPIController.swift in Sources */,
 				2A2BE2DC1BADF6D9008C113E /* config.swift in Sources */,
 				FA50B8AE1BAE5D1B00C2964B /* ResultCell.swift in Sources */,
 				FAFB3B8D1BADD5E40030EE3B /* InstagramAPIController.swift in Sources */,
-=======
 				2A56CA961BAE724000E1218E /* InstagramAPIController.swift in Sources */,
->>>>>>> i dunno backend
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
