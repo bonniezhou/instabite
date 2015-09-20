@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2A56CA8F1BAE720300E1218E /* YelpAPIController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A56CA8E1BAE720300E1218E /* YelpAPIController.swift */; settings = {ASSET_TAGS = (); }; };
+		2A56CA911BAE720800E1218E /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A56CA901BAE720800E1218E /* SearchViewController.swift */; settings = {ASSET_TAGS = (); }; };
+		2A56CA941BAE720F00E1218E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2A56CA921BAE720F00E1218E /* Main.storyboard */; settings = {ASSET_TAGS = (); }; };
+		2A56CA961BAE724000E1218E /* InstagramAPIController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A56CA951BAE724000E1218E /* InstagramAPIController.swift */; settings = {ASSET_TAGS = (); }; };
+		2A56CA981BAE792A00E1218E /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2A56CA971BAE792A00E1218E /* Info.plist */; settings = {ASSET_TAGS = (); }; };
 		2A8D4BE71BADE40200007C6F /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = 2A8D4BE61BADE40200007C6F /* Podfile */; };
 		2AA929611BAE60A7005A3768 /* config.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AA929601BAE60A7005A3768 /* config.swift */; };
 		76B1756C050C6BCF2E2D912C /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5912CD788B2D82543236299B /* Pods.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
@@ -14,12 +19,9 @@
 		FA50B8AE1BAE5D1B00C2964B /* ResultCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA50B8AD1BAE5D1B00C2964B /* ResultCell.swift */; };
 		FA7278C21BADB5EA00C98F50 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA7278C11BADB5EA00C98F50 /* AppDelegate.swift */; };
 		FA7278C41BADB5EA00C98F50 /* ResultsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA7278C31BADB5EA00C98F50 /* ResultsViewController.swift */; };
-		FA7278C71BADB5EA00C98F50 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA7278C51BADB5EA00C98F50 /* Main.storyboard */; };
 		FA7278C91BADB5EA00C98F50 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FA7278C81BADB5EA00C98F50 /* Images.xcassets */; };
 		FA7278CC1BADB5EA00C98F50 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = FA7278CA1BADB5EA00C98F50 /* LaunchScreen.xib */; };
 		FA7278D81BADB5EA00C98F50 /* InstabiteTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA7278D71BADB5EA00C98F50 /* InstabiteTests.swift */; };
-		FAFB3B8B1BADD5280030EE3B /* YelpAPIController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAFB3B8A1BADD5280030EE3B /* YelpAPIController.swift */; };
-		FAFB3B8D1BADD5E40030EE3B /* InstagramAPIController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAFB3B8C1BADD5E40030EE3B /* InstagramAPIController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -33,25 +35,29 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2A56CA8E1BAE720300E1218E /* YelpAPIController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YelpAPIController.swift; sourceTree = "<group>"; };
+		2A56CA901BAE720800E1218E /* SearchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
+		2A56CA931BAE720F00E1218E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		2A56CA951BAE724000E1218E /* InstagramAPIController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InstagramAPIController.swift; sourceTree = "<group>"; };
+		2A56CA971BAE792A00E1218E /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2A8D4BE61BADE40200007C6F /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		2AA929601BAE60A7005A3768 /* config.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = config.swift; sourceTree = "<group>"; };
 		32BF7AC0BDF4AA20F0E07985 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		5912CD788B2D82543236299B /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9B6887A25C2C390B9D398194 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
+<<<<<<< HEAD
 		B7DD31141BAE2D0B0000D95B /* SearchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		FA50B8AD1BAE5D1B00C2964B /* ResultCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResultCell.swift; sourceTree = "<group>"; };
+=======
+>>>>>>> i dunno backend
 		FA7278BC1BADB5EA00C98F50 /* Instabite.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Instabite.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		FA7278C01BADB5EA00C98F50 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FA7278C11BADB5EA00C98F50 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FA7278C31BADB5EA00C98F50 /* ResultsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultsViewController.swift; sourceTree = "<group>"; };
-		FA7278C61BADB5EA00C98F50 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		FA7278C81BADB5EA00C98F50 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		FA7278CB1BADB5EA00C98F50 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		FA7278D11BADB5EA00C98F50 /* InstabiteTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = InstabiteTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		FA7278D61BADB5EA00C98F50 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FA7278D71BADB5EA00C98F50 /* InstabiteTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstabiteTests.swift; sourceTree = "<group>"; };
-		FAFB3B8A1BADD5280030EE3B /* YelpAPIController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YelpAPIController.swift; sourceTree = "<group>"; };
-		FAFB3B8C1BADD5E40030EE3B /* InstagramAPIController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InstagramAPIController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -117,24 +123,23 @@
 				2AA929601BAE60A7005A3768 /* config.swift */,
 				FA7278C11BADB5EA00C98F50 /* AppDelegate.swift */,
 				FA7278C31BADB5EA00C98F50 /* ResultsViewController.swift */,
+<<<<<<< HEAD
 				FA50B8AD1BAE5D1B00C2964B /* ResultCell.swift */,
 				B7DD31141BAE2D0B0000D95B /* SearchViewController.swift */,
 				FAFB3B8A1BADD5280030EE3B /* YelpAPIController.swift */,
 				FAFB3B8C1BADD5E40030EE3B /* InstagramAPIController.swift */,
 				FA7278C51BADB5EA00C98F50 /* Main.storyboard */,
+=======
+				2A56CA951BAE724000E1218E /* InstagramAPIController.swift */,
+				2A56CA901BAE720800E1218E /* SearchViewController.swift */,
+				2A56CA8E1BAE720300E1218E /* YelpAPIController.swift */,
+				2A56CA921BAE720F00E1218E /* Main.storyboard */,
+>>>>>>> i dunno backend
 				FA7278C81BADB5EA00C98F50 /* Images.xcassets */,
+				2A56CA971BAE792A00E1218E /* Info.plist */,
 				FA7278CA1BADB5EA00C98F50 /* LaunchScreen.xib */,
-				FA7278BF1BADB5EA00C98F50 /* Supporting Files */,
 			);
 			path = Instabite;
-			sourceTree = "<group>";
-		};
-		FA7278BF1BADB5EA00C98F50 /* Supporting Files */ = {
-			isa = PBXGroup;
-			children = (
-				FA7278C01BADB5EA00C98F50 /* Info.plist */,
-			);
-			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
 		FA7278D41BADB5EA00C98F50 /* InstabiteTests */ = {
@@ -201,11 +206,13 @@
 		FA7278B41BADB5EA00C98F50 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0620;
+				LastSwiftUpdateCheck = 0700;
+				LastUpgradeCheck = 0700;
 				ORGANIZATIONNAME = "Bonnie Zhou";
 				TargetAttributes = {
 					FA7278BB1BADB5EA00C98F50 = {
 						CreatedOnToolsVersion = 6.2;
+						DevelopmentTeam = LSGJM3UQ9T;
 					};
 					FA7278D01BADB5EA00C98F50 = {
 						CreatedOnToolsVersion = 6.2;
@@ -237,10 +244,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FA7278C71BADB5EA00C98F50 /* Main.storyboard in Resources */,
 				FA7278CC1BADB5EA00C98F50 /* LaunchScreen.xib in Resources */,
 				2A8D4BE71BADE40200007C6F /* Podfile in Resources */,
 				FA7278C91BADB5EA00C98F50 /* Images.xcassets in Resources */,
+				2A56CA981BAE792A00E1218E /* Info.plist in Resources */,
+				2A56CA941BAE720F00E1218E /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -306,14 +314,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B7DD31151BAE2D0B0000D95B /* SearchViewController.swift in Sources */,
+				2A56CA911BAE720800E1218E /* SearchViewController.swift in Sources */,
 				FA7278C41BADB5EA00C98F50 /* ResultsViewController.swift in Sources */,
 				FA7278C21BADB5EA00C98F50 /* AppDelegate.swift in Sources */,
+				2A56CA8F1BAE720300E1218E /* YelpAPIController.swift in Sources */,
 				2AA929611BAE60A7005A3768 /* config.swift in Sources */,
+<<<<<<< HEAD
 				FAFB3B8B1BADD5280030EE3B /* YelpAPIController.swift in Sources */,
 				2A2BE2DC1BADF6D9008C113E /* config.swift in Sources */,
 				FA50B8AE1BAE5D1B00C2964B /* ResultCell.swift in Sources */,
 				FAFB3B8D1BADD5E40030EE3B /* InstagramAPIController.swift in Sources */,
+=======
+				2A56CA961BAE724000E1218E /* InstagramAPIController.swift in Sources */,
+>>>>>>> i dunno backend
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -336,10 +349,10 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		FA7278C51BADB5EA00C98F50 /* Main.storyboard */ = {
+		2A56CA921BAE720F00E1218E /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				FA7278C61BADB5EA00C98F50 /* Base */,
+				2A56CA931BAE720F00E1218E /* Base */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
@@ -375,6 +388,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_OPTIMIZATION_LEVEL = 0;
@@ -437,9 +451,13 @@
 			baseConfigurationReference = 9B6887A25C2C390B9D398194 /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = Instabite/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "hackthenorth.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Debug;
 		};
@@ -448,9 +466,13 @@
 			baseConfigurationReference = 32BF7AC0BDF4AA20F0E07985 /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = Instabite/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "hackthenorth.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Release;
 		};
@@ -468,6 +490,7 @@
 				);
 				INFOPLIST_FILE = InstabiteTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "hackthenorth.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Instabite.app/Instabite";
 			};
@@ -483,6 +506,7 @@
 				);
 				INFOPLIST_FILE = InstabiteTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "hackthenorth.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Instabite.app/Instabite";
 			};

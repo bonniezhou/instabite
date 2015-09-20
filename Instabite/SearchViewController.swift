@@ -8,6 +8,16 @@
 
 import UIKit
 
+class PhotosLoader: InstagramDelegate   {
+    var photos: NSMutableArray = []
+    func instagramPhotoFound(photo: NSDictionary) {
+        photos.addObject([photo] as NSArray)
+    }
+    func instagramIsDone() {
+        print("done")
+    }
+}
+
 class SearchViewController: UIViewController {
     
     @IBOutlet weak var location: UITextField!
@@ -15,8 +25,8 @@ class SearchViewController: UIViewController {
     @IBOutlet weak var searchBtn: UIButton!
     
     @IBAction func getSearchResults(sender: UIButton){
-        var Yelp: YelpAPIController = YelpAPIController()
-        var Instagram = InstagramAPIController()
+        let Yelp: YelpAPIController = YelpAPIController()
+        let Instagram = InstagramAPIController()
         Yelp.searchYelpFor(foodTypeInput.text!, location: "Waterloo", callback:
             Instagram.searchRestaurantPhotos
         )

@@ -1,10 +1,10 @@
 PODS:
-  - OAuthSwift (0.3.2)
+  - OAuthSwift (0.4.3)
 
 DEPENDENCIES:
-  - OAuthSwift (= 0.3.2)
+  - OAuthSwift (~> 0.4.0)
 
 SPEC CHECKSUMS:
-  OAuthSwift: a46aaf208cbda6306a3d280d4351945c899d29b5
+  OAuthSwift: 48268f44b3e3c7fce8181ffc53bc3468326849a7
 
 COCOAPODS: 0.38.2
