@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="ILE-ge-xpd">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="ILE-ge-xpd">
     <dependencies>
         <deployment version="1792" identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
@@ -45,6 +45,7 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
+                                    <action selector="getSearchResults:" destination="Y1A-S9-wFR" eventType="touchUpInside" id="eRf-WF-Oym"/>
                                     <segue destination="vXZ-lx-hvc" kind="push" id="b6E-F7-mwa"/>
                                 </connections>
                             </button>
@@ -67,6 +68,13 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text=" Location" clearsOnBeginEditing="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="h0S-9a-3PQ">
+                                <rect key="frame" x="44" y="184" width="244" height="52"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="textColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -81,6 +89,11 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="hzo-Yz-Knm"/>
+                    <connections>
+                        <outlet property="foodTypeInput" destination="lTK-w6-HuE" id="9lx-zv-UEw"/>
+                        <outlet property="location" destination="h0S-9a-3PQ" id="3Ht-5k-8Tq"/>
+                        <outlet property="searchBtn" destination="a2j-F4-bPX" id="FZH-pC-Y2b"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lys-aD-g00" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
