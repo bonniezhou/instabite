@@ -9,7 +9,7 @@
 import Foundation
 import OAuthSwift
 
-class YelpAPIController {
+class YelpAPIController:NSObject {
     let baseUrl = "http://api.yelp.com/v2/search"
     let consumerKey = "vxQLi0q-qk-KbJlmR3wyjw"
     
@@ -20,15 +20,19 @@ class YelpAPIController {
         accessTokenSecret: config["private"]!["yelp"]!["token"]!
     )
     
-    func searchYelpFor(searchTerm: String) {
+    func searchYelpFor(searchTerm: String, location: String, callback: (NSDictionary) -> Void) {
         let parameters = [
             "term": searchTerm,
-            "location": "Berkeley"
+            "location": location
         ]
+        var restaurants: NSDictionary
         yelpOAuth.get(baseUrl, parameters: parameters,
             success: {
-                _, data in
-                println(data)
+                data, headers in
+                var restaurants: NSDictionary = NSJSONSerialization.JSONObjectWithData(data, options: nil, error: nil) as! NSDictionary
+                for business in NSArray(array: restaurants["businesses"]! as! Array)   {
+                    callback(business as! NSDictionary)
+                }
             }, failure: {
                 data in
                 println(data)
