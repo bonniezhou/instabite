@@ -1,10 +1,26 @@
 PODS:
-  - OAuthSwift (0.3.2)
+  - BrightFutures (3.0.0-beta.3):
+    - Result (= 0.6-beta.1)
+  - OAuthSwift (0.4.3)
+  - Result (0.6-beta.1)
 
 DEPENDENCIES:
-  - OAuthSwift (= 0.3.2)
+  - BrightFutures (from `https://github.com/Thomvis/BrightFutures.git`, branch `swift-2.0`)
+  - OAuthSwift (~> 0.4.0)
+
+EXTERNAL SOURCES:
+  BrightFutures:
+    :branch: swift-2.0
+    :git: https://github.com/Thomvis/BrightFutures.git
+
+CHECKOUT OPTIONS:
+  BrightFutures:
+    :commit: 65d188ac0af47ddeba2433df6a484eb1161a53c3
+    :git: https://github.com/Thomvis/BrightFutures.git
 
 SPEC CHECKSUMS:
-  OAuthSwift: a46aaf208cbda6306a3d280d4351945c899d29b5
+  BrightFutures: 1088ccf030bb2feb0a4f6bd3bd50595238ec2681
+  OAuthSwift: 48268f44b3e3c7fce8181ffc53bc3468326849a7
+  Result: af24e3e57ab81005ec4221a53fd36dc1e7a52869
 
 COCOAPODS: 0.38.2

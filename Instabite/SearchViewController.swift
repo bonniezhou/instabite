@@ -8,6 +8,7 @@
 
 import UIKit
 
+
 class SearchViewController: UIViewController {
     
     @IBOutlet weak var location: UITextField!
@@ -15,18 +16,16 @@ class SearchViewController: UIViewController {
     @IBOutlet weak var searchBtn: UIButton!
     
     @IBAction func getSearchResults(sender: UIButton){
-        var Yelp: YelpAPIController = YelpAPIController()
-        var Instagram = InstagramAPIController()
-        Yelp.searchYelpFor(foodTypeInput.text!, location: "Waterloo", callback:
+        let Yelp: YelpAPIController = YelpAPIController()
+        let Instagram = InstagramAPIController()
+        Yelp.delegate = ResultsViewController()
+        Yelp.searchYelpFor(foodTypeInput.text!, location: location.text!, callback:
             Instagram.searchRestaurantPhotos
         )
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        var yelp = YelpAPIController()
-        var instagram = InstagramAPIController()
-        instagram.searchRestaurantPhotos("37.786138600000001", longitude: "-122.40262130000001")
     }
 
     override func didReceiveMemoryWarning() {

@@ -7,10 +7,16 @@
 //
 
 import Foundation
+import BrightFutures
 import OAuthSwift
 
+
+protocol YelpDelegate {
+    func done(photos: NSMutableArray)
+}
+
 class YelpAPIController:NSObject {
-    let baseUrl = "http://api.yelp.com/v2/search"
+    let baseUrl = "https://api.yelp.com/v2/search"
     let consumerKey = "vxQLi0q-qk-KbJlmR3wyjw"
     
     let yelpOAuth = OAuthSwiftClient(
@@ -19,23 +25,34 @@ class YelpAPIController:NSObject {
         accessToken: config["public"]!["yelp"]!["token"]!,
         accessTokenSecret: config["private"]!["yelp"]!["token"]!
     )
+    var delegate: YelpDelegate?
     
-    func searchYelpFor(searchTerm: String, location: String, callback: (NSDictionary) -> Void) {
+    func searchYelpFor(searchTerm: String, location: String, callback: (NSDictionary) -> NSDictionary) {
         let parameters = [
             "term": searchTerm,
             "location": location
         ]
-        var restaurants: NSDictionary
+        var restaurants: NSDictionary = Dictionary<String, String>()
         yelpOAuth.get(baseUrl, parameters: parameters,
             success: {
                 data, headers in
-                var restaurants: NSDictionary = NSJSONSerialization.JSONObjectWithData(data, options: nil, error: nil) as! NSDictionary
-                for business in NSArray(array: restaurants["businesses"]! as! Array)   {
-                    callback(business as! NSDictionary)
+                do{
+                    var allPhotos: NSMutableArray = []
+                    restaurants = try NSJSONSerialization.JSONObjectWithData(data, options: []) as! NSDictionary
+                    let businesses = restaurants["businesses"]! as! NSArray
+                    for r in businesses   {
+                        let restaurant = r as! NSDictionary
+                        let photos = callback(restaurant)
+                        allPhotos.addObject(photos)
+                    }
+                    self.delegate?.done(allPhotos)
+                }
+                catch {
+                    print("fuck")
                 }
             }, failure: {
                 data in
-                println(data)
+                print("fuck")
             })
     }
 }
